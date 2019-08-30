@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+{% block main %}
+
+Форма створення клієнта: фізичної особи-підприємця
+
+<form role="form" action="{% url 'fop_create' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+              <label for="client_code">ЭДРПОУ</label>
+              <input type="text" class="form-control" name="client_code" id="client_code" placeholder="ЭДРПОУ">
+        </div>
+        <div class="form-group">
+            <label for="second_name">Прізвище</label>
+            <input type="text" class="form-control" name="second_name" id="second_name" placeholder="Призвище">
+        </div>
+        <div class="form-group">
+                <label for="first_name">Ім'я</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Ім'я">
+        </div>
+        <div class="form-group">
+              <label for="patronymic">По-батькові</label>
+              <input type="text" class="form-control" name="patronymic" id="patronymic" placeholder="По-батькові">
+        </div>
+        <div class="form-group">
+              <label for="value_added_tax">ІПН</label>
+              <input type="text" class="form-control" name="value_added_tax" id="value_added_tax" placeholder="ІПН">
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="extract" name="extract">
+            <label for="extract">Виписка</label>
+
+            <input type="checkbox" id="passport" name="passport">
+            <label for="passport">Паспорт</label>
+
+            <input type="checkbox" id="single_tax" name="single_tax">
+            <label for="single_tax">Платник єдиного внеску</label>
+
+            <input type="checkbox" id="general_tax" name="general_tax">
+            <label for="general_tax">Платник на загальних підставах</label>
+        </div>
+        <div class="form-group">
+              <label for="notes">Примітки</label>
+              <input type="text" class="form-control" name="notes" id="notes" placeholder="Примітки">
+        </div>
+    <div>
+        <button type="submit" class="btn btn-default active">Створити</button>
+    </div>
+
+    </form>
+
+{% endblock %}

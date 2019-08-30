@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+    <title>Журнал</title>
+</head>
+<body>
+<header>
+<nav class="dws-menu">
+	<ul>
+		<li><a href="/"><i class="fas fa-home"></i>Головна</a></li>
+        <li><a href="{% url 'client_created_form' %}"><i class="fas fa-home"></i>Створити клієнта</a></li>
+
+	</ul>
+</nav>
+</header>
+
+{% block main %}
+{% endblock %}
+
+</body>
+</html>
